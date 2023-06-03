@@ -54,7 +54,7 @@ class NotificationController extends Controller
     public function showNotifications()
     {
         $data = array(
-            'title' => get_phrases(['notification', 'view']),
+            'title' => 'notification view',
             'content'   => 'notification',
         );
         return view('layouts.layouts', $data);

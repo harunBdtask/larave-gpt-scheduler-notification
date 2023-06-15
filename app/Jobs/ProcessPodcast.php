@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Services\CommonService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -26,6 +27,6 @@ class ProcessPodcast implements ShouldQueue
      */
     public function handle(): void
     {
-        sleep(7);
+        CommonService::sleep(7);
     }
 }

@@ -14,6 +14,12 @@
         "openai-php/client": "^0.3.4",
         "openai-php/laravel": "dev-main"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./laravel-unique-slug-generator"
+        }
+    ],
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
@@ -21,7 +27,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "harunurrashid/laravel-unique-slug": "*"
     },
     "autoload": {
         "psr-4": {
@@ -32,7 +39,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "HarunurRashid\\LaravelUniqueSlug\\": "laravel-unique-slug-generator\/src/"
         }
     },
     "scripts": {

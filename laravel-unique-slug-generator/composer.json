@@ -1,0 +1,29 @@
+{
+    "name": "harunurrashid/laravel-unique-slug",
+    "description": "A unique slug for laravel",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HarunurRashid\\LaravelUniqueSlug\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Harunur Rashid",
+            "email": "ahmharunurrashid@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HarunurRashid\\LaravelUniqueSlug\\UniqueSlugServiceProvider"
+            ],
+            "aliases": {
+                "UniqueSlug": "HarunurRashid\\LaravelUniqueSlug\\UniqueSlug"
+            }
+        }
+    }
+}

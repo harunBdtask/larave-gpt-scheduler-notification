@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 use OpenAI\Laravel\Facades\OpenAI;
 
 Route::get('/', function(){
-    $slug =  UniqueSlug::generate(User::class, 'lala', 'lala@gmail.com');
+    $slug =  UniqueSlug::generate(User::class, 'lala', 'name');
     dd($slug);
     ProcessPodcast::dispatch();
     return view('index');

@@ -1,5 +1,7 @@
 FROM php:8.2-fpm
 
+MAINTAINER HARUNUR RASHID <ahmharunurrashid@gmail.com>
+
 # Arguments defined in docker-compose.yml
 ARG user
 ARG uid

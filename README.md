@@ -21,5 +21,7 @@ php artisan config:clear
 
 php artisan serve
 
+composer init
+
 
 ```

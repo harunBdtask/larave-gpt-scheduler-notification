@@ -15,6 +15,10 @@ class UniqueSlugServiceProvider extends ServiceProvider
         $this->app->bind('laravel-unique-slug', function($app) {
             return new \HarunurRashid\LaravelUniqueSlug\UniqueSlug();
         });
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/laravel-unique-slug.php', 'laravel-unique-slug'
+        );
     }
 
     /**
@@ -22,6 +26,8 @@ class UniqueSlugServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->publishes([
+            __DIR__.'/../config/laravel-unique-slug.php' => config_path('laravel-unique-slug.php'),
+        ]);
     }
 }

@@ -15,10 +15,10 @@ class UniqueSlug
      * @return string
      * @throws \Exception
      */
-    public function generate($model, $title, $field, $separator = "-"): string
+    public function generate($model, $title, $field, $separator = null): string
     {
+        $separator = empty($separator)?config('laravel-unique-slug.separator'):$separator;
         $id = 0;
-
         $slug =  preg_replace('/\s+/', $separator, (trim(strtolower($title))));
         $slug =  preg_replace('/\?+/', $separator, (trim(strtolower($slug))));
         $slug =  preg_replace('/\#+/', $separator, (trim(strtolower($slug))));
@@ -41,8 +41,10 @@ class UniqueSlug
             return $slug;
         }
 
+        $max_count = config('laravel-unique-slug.max_count');
+
         // Just append numbers like a savage until we find not used.
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= $max_count; $i++) {
             $newSlug = $slug . $separator . $i;
             if (!$allSlugs->contains("$field", $newSlug)) {
                 return $newSlug;
